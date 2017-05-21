@@ -13,3 +13,15 @@ create table if not exists `article_list`(
 	`authorid` bigint unsigned not null default '0'
 )engine = innodb default charset 'utf8';
 
+drop table if exists `author`;
+create table if not exists `author`(
+	`authorid` bigint unsigned not null auto_increment primary key,
+	`nickname` varchar(16) not null default '',
+	`name` varchar(16) not null default '',
+	`yearid` enum('0','1','2','3','4','5','6','7','8','9','10','11','12') not null default '1',
+	`sex` enum('0','1') not null default '0',
+	`underwrite` varchar(200) not null default '空空如也' comment '签名'
+)engine = innodb default charset 'utf8';
+
+insert into `author` (`nickname`,`name`,`yearid`,`sex`) values ('管理员','管理员','0','0');
+
