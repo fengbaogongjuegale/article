@@ -1,0 +1,150 @@
+
+<!-- MAIN -->
+<div class="main">
+	<!-- MAIN CONTENT -->
+	<div class="main-content">
+		<div class="container-fluid">
+			<h3 class="page-title">发表文章</h3>
+
+
+			<!-- INPUTS -->
+			<div class="panel">
+
+				<div class="panel-body">
+
+
+
+					<?php echo form_open('admin/admin/publish'); ?>
+
+					<?php if($isSussess){ ?>              
+					<div class="alert alert-success alert-dismissible" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+										<i class="fa fa-check-circle"></i> 添加成功<?php echo $isSussess ?>
+									</div>
+					<!-- 提交改成ajax？ -->
+					<?php }?>
+
+
+					<label>标题</label>
+					<input type="text" name="title" class="form-control" placeholder="请输入标题" value="<?php echo set_value('title') ?>" >
+
+					<?php if(form_error('title')){ ?>
+					<br>
+					<div class="alert alert-warning alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+						<i class="fa fa-warning"></i> <?php echo form_error('title', '<span>', '</span>'); ?>
+					</div>
+					<?php } ?>
+
+					<br>
+					<label>作者</label>
+					<input type="text" name="author" class="form-control" placeholder="请输入作者" value="<?php echo set_value('author') ?>">
+
+					<?php if(form_error('author')){ ?>
+					<br>			
+					<div class="alert alert-warning alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+						<i class="fa fa-warning"></i>  <?php echo form_error('author', '<span>', '</span>'); ?> 
+					</div>
+					<?php }?>
+
+					<br>
+					<label>年级</label>	
+					<select name="year" class="form-control" value="<?php echo set_value('year') ?>">
+						<option value="0">请选择年级</option>
+						<option value="1">一年级</option>
+						<option value="2">二年级</option>
+						<option value="3">三年级</option>
+						<option value="4">四年级</option>
+						<option value="5">五年级</option>
+						<option value="6">六年级</option>
+						<option value="7">初一</option>
+						<option value="8">初二</option>
+						<option value="9">初三</option>
+						<option value="10">高一</option>
+						<option value="11">高二</option>
+						<option value="12">高三</option>
+					</select>
+					<?php if(form_error('year')){ ?>
+					<br>
+
+					<div class="alert alert-warning alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+						<i class="fa fa-warning"></i> <?php echo form_error('year', '<span>', '</span>'); ?>
+					</div>
+					<?php }?>													
+					<br>
+
+					<label>体裁</label>
+					<select name="genre" class="form-control" value="<?php echo set_value('genre') ?>">
+						<option value="0">请选择体裁</option>
+						<option value="1"> 写人作文 </option>
+						<option value="2"> 叙事作文 </option>
+						<option value="3"> 写景作文 </option>
+						<option value="4"> 状物作文 </option>
+						<option value="5"> 想象作文 </option>
+						<option value="6"> 话题作文 </option>
+						<option value="7"> 看图作文 </option>
+						<option value="20"> 英语作文 </option>
+						<option value="8"> 散文 </option>
+						<option value="19"> 诗歌 </option>
+						<option value="9"> 议论文 </option>
+						<option value="10"> 说明文 </option>
+						<option value="11"> 读后感 </option>
+						<option value="12"> 演讲稿 </option>
+						<option value="13"> 申请书 </option>
+						<option value="14"> 书信 </option>
+						<option value="15"> 日记 </option>
+						<option value="16"> 续写改写 </option>
+						<option value="17"> 小说 </option>
+						<option value="18"> 观后感 </option>
+					</select>
+					<?php if(form_error('genre')){ ?>
+					<br>
+					<div class="alert alert-warning alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+						<i class="fa fa-warning"></i> <?php echo form_error('genre', '<span>', '</span>'); ?>
+					</div>
+					<?php }?>	
+
+
+					<br>
+					<label>内容</label>
+					<textarea name="content" class="form-control" placeholder="请输入内容" rows="8" value="<?php echo set_value('content') ?>"></textarea>
+					<?php if(form_error('content')){ ?>
+					<br>
+					<div class="alert alert-warning alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+						<i class="fa fa-warning"></i> <?php echo form_error('content', '<span>', '</span>'); ?>
+					</div>
+					<?php }?>	
+
+
+					<br>
+
+					<button type="submit" value="Submit" class="btn btn-primary btn-block">提交</button>
+
+				</form>
+
+
+
+			</div>
+		</div>
+		<!-- END INPUTS -->
+
+
+
+	</div>
+</div>
+<!-- END MAIN CONTENT -->
+</div>
+<!-- END MAIN -->
+<div class="clearfix"></div>
+<footer>
+	<div class="container-fluid">
+		<p class="copyright">&copy; 2017 <a href="#" target="_blank">Theme I Need</a>. All Rights Reserved. More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+	</div>
+</footer>
+</div>
+<!-- END WRAPPER -->
+

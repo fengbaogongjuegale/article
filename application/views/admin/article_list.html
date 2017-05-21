@@ -1,0 +1,89 @@
+<style type="text/css">
+	ul.pagination {
+		display: inline-block;
+		padding: 0;
+		margin: 0;
+		float: right;
+	}
+
+	ul.pagination li {display: inline;}
+
+	ul.pagination li a {
+		color: black;
+		float: left;
+		padding: 8px 16px;
+		text-decoration: none;
+	}
+	ul.pagination li a.active {
+		background-color: #3b98c8;
+		color: white;
+	}
+
+	ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+</style>
+<!-- MAIN -->
+<div class="main">
+	<!-- MAIN CONTENT -->
+	<div class="main-content">
+		<div class="container-fluid">
+			<h3 class="page-title">文章列表</h3>
+
+
+			<!-- INPUTS -->
+			<div class="panel">
+
+				<div class="panel-body">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>articleid</th>
+								<th>作者</th>
+								<th>标题</th>
+								<th>年级</th>
+								<th>体裁</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+
+							<?php foreach($articles as $a): ?>
+								<tr>
+									<td><?php echo $a['articleid'] ?></td>
+									<td><?php echo $a['authorid']  ?></td>
+									<td><?php echo $a['title'] ?></td>
+									<td><?php echo $a['yearid'] ?></td>
+									<td><?php echo $a['genreid'] ?></td>
+									<td>
+										<a href="">查看</a>
+										<a href="">删除</a>
+									</td>
+								</tr>
+							<?php endforeach?>
+
+
+						</tbody>
+					</table>
+
+					<ul class = "pagination">
+						<?php echo $links; ?>
+					</ul>
+
+				</div>
+			</div>
+			<!-- END INPUTS -->
+
+
+
+		</div>
+	</div>
+	<!-- END MAIN CONTENT -->
+</div>
+<!-- END MAIN -->
+<div class="clearfix"></div>
+<footer>
+	<div class="container-fluid">
+		<p class="copyright">&copy; 2017 <a href="#" target="_blank">Theme I Need</a>. All Rights Reserved. More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+	</div>
+</footer>
+</div>
+<!-- END WRAPPER -->
