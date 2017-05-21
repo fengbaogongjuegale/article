@@ -17,6 +17,7 @@ class Admin extends CI_Controller{
 	}
 
 	public function arlist(){
+		// echo print_r($this->config->item('year'));die;
 
 		//载入分页类
 		$this->load->library('pagination');
@@ -55,8 +56,8 @@ class Admin extends CI_Controller{
 		
 		$this->load->model('admin_model','admin');
 
-		$data['articles'] = $this->admin->getlist($perPage,$offset);		
-
+		$data['articles'] = $this->admin->getlist($perPage,$offset);
+		
 		if((bool)$data){
 			$this->load->view('admin/header.html',$data);
 			$this->load->view('admin/article_list.html');
