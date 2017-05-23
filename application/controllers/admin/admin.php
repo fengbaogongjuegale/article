@@ -57,6 +57,8 @@ class Admin extends CI_Controller{
 		$this->load->model('admin_model','admin');
 
 		$data['articles'] = $this->admin->getlist($perPage,$offset);
+
+		
 		
 		if((bool)$data){
 			$this->load->view('admin/header.html',$data);
@@ -72,6 +74,8 @@ class Admin extends CI_Controller{
 	}
 
 	public function publish(){
+
+		// echo date('Y-m-d','1495505344');die;
 
 		$data = $this->input->post();
 
@@ -96,6 +100,7 @@ class Admin extends CI_Controller{
         );
 
         $data['isSussess'] = false;
+
 		if ($this->form_validation->run() == FALSE)
 		{
 			// $this->load->view('myform');
@@ -113,9 +118,11 @@ class Admin extends CI_Controller{
 
 			$idata['title'] = $data['title'];
 			$idata['authorid'] = 0;
+			$idata['author'] = $data['author'];
 			$idata['yearid'] = $data['year'];
 			$idata['genreid'] = $data['genre'];
 			$idata['content'] = $data['content'];
+			$idata['createtime'] = time();
 
 			
 			if($this->admin->add_article($idata)){
